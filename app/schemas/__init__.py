@@ -1,0 +1,3 @@
+from .clientes import ClienteSerializer, ClienteDeserializer
+from .usuarios import UsuarioSerializer, UsuarioDeserializer
+from .clientes_usuarios import ClientesUsuariosSerializer,ClientesUsuariosDeserializer
