@@ -5,6 +5,7 @@ from os import getenv
 class Base:
     # esta propiedad sirve para poder indicar si queremos que SQLALCHEMY nos muestre el seguimiento de las modificaciones en la base de datos
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    JWT_SECRET_KEY=getenv("JWT_SECRET_KEY")
 
 class Development(Base):
     DEBUG = True # Esta propiedad permitira que se actualice automaticamente el servidor al guardar cualquier cambio

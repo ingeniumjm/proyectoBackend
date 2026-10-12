@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict,EmailStr
 from uuid import UUID
 from datetime import datetime
 
@@ -7,7 +7,7 @@ class UsuarioSerializer(BaseModel):
     # Serializador : Es el encargado de validar la data que llega de afuera y verificar si es correcta
     nombres: str = Field(min_length=1, max_length=100, examples=["Juan Manuel"])
     apellidos: str = Field(min_length=1, max_length=100, examples=["Vásquez Callo"])
-    email: str = Field(min_length=3, max_length=254, examples=["juan.vasquez@ingenium.pe"])
+    email: EmailStr = Field(max_length=254, examples=["juan.vasquez@ingenium.pe"])
     telefono: str | None = Field(default=None, min_length=1, max_length=20)
     estado: str = Field(pattern="^(activo|bloqueado|inactivo)$")
 

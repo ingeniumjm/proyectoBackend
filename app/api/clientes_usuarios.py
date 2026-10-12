@@ -13,7 +13,7 @@ class ClientesUsuariosController(Resource):
         try:
             dataValidada= ClientesUsuariosSerializer.model_validate(request.get_json())
             return{
-                "message": "Usuarios agregada a los clientes"
+                "message": "Se asigno un usuario al cliente"
             }
         except ValidationError as error:
             return {
