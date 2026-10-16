@@ -5,3 +5,4 @@ from .usuarios import UsuariosController,UsuarioController,SuperUsuariosControll
 from .clientes_usuarios import ClientesUsuariosController
 from .credenciales_locales import CredencialesLocalesController
 from .authLogin import AuthLoginController,UserController
+from .paises import PaisesController

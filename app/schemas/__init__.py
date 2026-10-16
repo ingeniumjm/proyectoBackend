@@ -3,3 +3,4 @@ from .usuarios import UsuarioSerializer, UsuarioDeserializer
 from .clientes_usuarios import ClientesUsuariosSerializer,ClientesUsuariosDeserializer
 from .credenciales_locales import CredencialesLocalesSerializer,CredencialesLocalesDeserializer
 from .authLogin import AuthLoginSerializer,AuthLoginDeserializer
+from .paises import PaisesDeserializer,PaisesSerializer
