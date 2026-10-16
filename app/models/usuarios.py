@@ -17,11 +17,15 @@ class Usuario(db.Model):
     email = Column(String(254), nullable=False)
     telefono = Column(String(20))
     estado = Column(String(20), nullable=False)
+#******************************************************
+    rol = Column(String(20), nullable=False)
+#******************************************************
     email_verificado_en = Column(DateTime(timezone=True))
     ultimo_acceso_en = Column(DateTime(timezone=True))
     creado_en = Column(DateTime(timezone=True), nullable=False, default=ahora)
     actualizado_en = Column(DateTime(timezone=True), nullable=False,
                             default=ahora, onupdate=ahora)
+
 
     __table_args__ = (
         CheckConstraint("estado IN ('activo', 'bloqueado', 'inactivo')",

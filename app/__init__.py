@@ -7,7 +7,9 @@ from .models import *
 from flask_restful import Api
 # Importamos controladores
 from .api import ClientesController, ClienteController
-from .api import UsuariosController, UsuarioController
+#*******************************************************************************
+from .api import UsuariosController, UsuarioController,SuperUsuariosController
+#*******************************************************************************
 from .api import ClientesUsuariosController
 from .api import CredencialesLocalesController
 from .api import AuthLoginController,UserController
@@ -42,6 +44,9 @@ def create_app(env="development"):
     api.add_resource(CredencialesLocalesController, "/credenciales-locales")
     api.add_resource(AuthLoginController, "/auth/login")
     api.add_resource(UserController, "/auth/me")
+    #***************************************************************
+    api.add_resource(SuperUsuariosController, "/super-usuarios")
+    #***************************************************************
     # Al momento de registrar una ruta y si esta contiene <> significara que esta parte de la rutoa es dimamica, es decir, aceptara valores y los pondra en esa variable, y esta variable tiene que tener el mismo nombre al momento de definir el meto, se puede restringir el tipo de dato poniendo antes el tipo y luego:
     api.add_resource(ClienteController, "/cliente/<uuid:id>")
     

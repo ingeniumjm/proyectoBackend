@@ -10,7 +10,9 @@ class UsuarioSerializer(BaseModel):
     email: EmailStr = Field(max_length=254, examples=["juan.vasquez@ingenium.pe"])
     telefono: str | None = Field(default=None, min_length=1, max_length=20)
     estado: str = Field(pattern="^(activo|bloqueado|inactivo)$")
-
+    #*********************************************
+    rol: str =  Field(default="Usuario", min_length=1, max_length=20)
+    #*********************************************
 
 class UsuarioDeserializer(BaseModel):
     # Deserializador : Transforma la data del modelo ORM a dict/JSON
@@ -22,6 +24,9 @@ class UsuarioDeserializer(BaseModel):
     email: str
     telefono: str | None
     estado: str
+    #**********************************************
+    rol : str
+    #**********************************************
     email_verificado_en: datetime | None
     ultimo_acceso_en: datetime | None
     creado_en: datetime
